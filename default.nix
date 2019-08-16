@@ -16,7 +16,7 @@ let
 in
 haskellPackages.developPackage {
   # The path to our cabal project's root directory
-  root = ./.;
+  root = ./summoner-cli;
   name = "summoner";
 
   # Haskell packages to override
