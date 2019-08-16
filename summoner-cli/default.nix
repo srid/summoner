@@ -29,11 +29,11 @@ haskellPackages.developPackage {
     parser-combinators = builtins.fetchTarball "https://github.com/mrkkrp/parser-combinators/archive/4262c00ef70cc30bfc56db0a10c37d88ad88fe1a.tar.gz";
   };
 
-  overrides = self: super: with pkgs.haskell.lib; {
-    # github = dontCheck super.github;  # `dontCheck` skips running tests on this package
-  };
-
   modifier = drv: pkgs.haskell.lib.overrideCabal drv (attrs: {
-    buildTools = with haskellPackages; (attrs.buildTools or []) ++ [cabal-install ghcid] ;
+    buildTools = with haskellPackages; (attrs.buildTools or []) ++ [
+      cabal-install
+      ghcid
+      pkgs.gitAndTools.hub
+    ];
   });
 }
