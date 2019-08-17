@@ -32,11 +32,4 @@ haskellPackages.extend (pkgs.haskell.lib.packageSourceOverrides {
     "4262c00ef70cc30bfc56db0a10c37d88ad88fe1a";
 })
 
-#   modifier = drv: pkgs.haskell.lib.overrideCabal drv (attrs: {
-#     buildTools = with haskellPackages; (attrs.buildTools or []) ++ [
-#       cabal-install
-#       ghcid
-#       pkgs.gitAndTools.hub
-#     ];
-#   });
-# }
+
